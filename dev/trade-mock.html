@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trade - Path of Exile</title>
+    <!--
+      Макет страницы pathofexile.com/trade для разработки и скриншотов: та же структура, на которую
+      опираются селекторы content script (search-panel.ts, row-parser.ts). Это НЕ копия сайта —
+      только скелет разметки. Открыть: pnpm preview:mock (с ?seed=1 — с примерами закладок).
+    -->
+    <style>
+      body { margin: 0; background: #0b0b0b; color: #a38d6d; font: 14px/1.4 Georgia, serif; }
+      #app { max-width: none; }
+      .top { height: 64px; display: flex; align-items: center; padding: 0 24px; border-bottom: 1px solid #2a2219; }
+      .logo a { color: #c8b48a; font-size: 22px; text-decoration: none; display: block; overflow: hidden; white-space: nowrap; }
+      #trade { padding: 16px 24px; }
+      .search-panel { background: #120f0b; border: 1px solid #2a2219; padding: 12px; }
+      .search-bar { display: flex; gap: 12px; }
+      .search-left input, .filter-property input { background: #1a1510; border: 1px solid #3a2f22; color: #e0d2b4; padding: 6px 8px; font: inherit; }
+      .search-advanced-items .filter-group { display: flex; gap: 8px; margin-top: 8px; }
+      .search-advanced-pane { margin-top: 8px; }
+      .filter-title { display: inline-block; padding: 2px 6px; background: #1a1510; margin: 2px; }
+      .filter.disabled .filter-title { opacity: 0.4; }
+      .results { margin-top: 16px; }
+      .resultset > .row { display: flex; gap: 16px; padding: 12px; border-bottom: 1px solid #2a2219; background: #100d0a; }
+      .left { width: 100px; text-align: center; }
+      .icon img { width: 94px; height: 188px; object-fit: contain; }
+      .sockets { display: flex; justify-content: center; gap: 2px; }
+      .socket { width: 10px; height: 10px; border-radius: 50%; background: #6f8de8; }
+      .middle { flex: 1; }
+      .itemPopupContainer { text-align: center; background: #000; border: 1px solid #3a2f22; padding: 8px; }
+      .itemHeader .itemName { font-size: 18px; }
+      .rarePopup .itemName { color: #ff7; }
+      .uniquePopup .itemName { color: #af6025; }
+      .explicitMod { color: #88f; }
+      .implicitMod { color: #88f; }
+      .craftedMod { color: #b4b4ff; }
+      .unmet { color: #d20000; }
+      .property, .itemLevel { color: #7f7f7f; }
+      .right { width: 260px; }
+      .details .price { text-align: right; color: #e0d2b4; }
+      .currency-image img { width: 20px; height: 20px; vertical-align: middle; }
+      .btns { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; margin-top: 8px; }
+      .btn { background: #1a1510; border: 1px solid #3a2f22; color: #e0d2b4; padding: 4px 8px; font: inherit; }
+      .character-name, .profile-link { text-align: right; font-size: 12px; }
+      .top-btn { position: fixed; right: 20px; bottom: 20px; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="top"><div class="logo"><a href="#">Path of Exile · Trade (макет)</a></div></div>
+      <div id="trade">
+        <div class="search-panel">
+          <div class="search-bar"><div class="search-left"><input value="" placeholder="Search Items..." /></div></div>
+          <div class="search-advanced-items">
+            <div class="filter-group">
+              <div class="filter-property"><input value="Body Armour" /></div>
+              <div class="filter-property"><input value="Rare" /></div>
+            </div>
+          </div>
+          <div class="search-advanced-pane">
+            <div class="filter-group-body">
+              <div class="filter"><span class="filter-title">+# to maximum Energy Shield</span></div>
+              <div class="filter"><span class="filter-title">pseudo +#% total to Fire Resistance</span></div>
+              <div class="filter disabled"><span class="filter-title">+# to maximum Life</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="results"><div class="resultset" id="resultset"></div></div>
+      </div>
+      <button class="top-btn btn">▲ Top</button>
+    </div>
+    <script type="module" src="./trade-mock.ts"></script>
+  </body>
+</html>
