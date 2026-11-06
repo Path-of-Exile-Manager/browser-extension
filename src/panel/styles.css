@@ -1,0 +1,13 @@
+/* Стили панели: дизайн-система целиком (Tailwind + токены + шрифты). */
+@import "../design-system/styles.css";
+
+/* Tailwind ищет классы по всему проекту: сборку, архивы и скриншоты не сканируем. */
+@source not "../../dist";
+@source not "../../release";
+@source not "../../.screens";
+
+/* Панель — узкая колонка внутри iframe: фон surface (decisions.md, п. 4 открытых вопросов). */
+html,
+body {
+  background: var(--color-bg-surface);
+}

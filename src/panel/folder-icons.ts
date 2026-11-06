@@ -1,0 +1,51 @@
+import {
+  Bug,
+  Coins,
+  Crown,
+  Flame,
+  FlaskConical,
+  Folder,
+  Gem,
+  Hammer,
+  Heart,
+  Map,
+  Package,
+  ScrollText,
+  Shield,
+  Skull,
+  Snowflake,
+  Sparkles,
+  Star,
+  Swords,
+  Target,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+import type { FolderIcon } from "@/shared/types";
+
+/**
+ * Значки папок — иконки Lucide, а не арт игры (guide.md: не использовать арт GGG так,
+ * чтобы продукт выглядел официальным). Значки папок Better Trading при импорте переводятся в эти.
+ */
+export const FOLDER_ICON_COMPONENTS: Record<FolderIcon, { icon: LucideIcon; label: string }> = {
+  folder: { icon: Folder, label: "Папка" },
+  swords: { icon: Swords, label: "Оружие / билд" },
+  shield: { icon: Shield, label: "Броня" },
+  gem: { icon: Gem, label: "Камни" },
+  coins: { icon: Coins, label: "Валюта" },
+  sparkles: { icon: Sparkles, label: "Дорогое" },
+  map: { icon: Map, label: "Карты" },
+  crown: { icon: Crown, label: "Уникальные" },
+  skull: { icon: Skull, label: "Боссы" },
+  flame: { icon: Flame, label: "Огонь" },
+  snowflake: { icon: Snowflake, label: "Холод" },
+  zap: { icon: Zap, label: "Молния" },
+  target: { icon: Target, label: "Цель" },
+  star: { icon: Star, label: "Избранное" },
+  heart: { icon: Heart, label: "Жизнь" },
+  hammer: { icon: Hammer, label: "Крафт" },
+  flask: { icon: FlaskConical, label: "Флаконы / эссенции" },
+  scroll: { icon: ScrollText, label: "Гадальные карты" },
+  bug: { icon: Bug, label: "Скарабеи" },
+  package: { icon: Package, label: "Разное" },
+};
