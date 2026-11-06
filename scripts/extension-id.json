@@ -1,0 +1,5 @@
+{
+    "//":  "Постоянный ID распакованной сборки: Chrome выводит его из открытого ключа (поле key в manifest.json). Тот же ID — в desktop-application/crates/browser-bridge/src/config.rs. Закрытый ключ не нужен и не хранится.",
+    "id":  "abnbkbopbfhbfbinmeihjniikcamacol",
+    "key":  "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvUQcEgXrWE+/OkS7uXwGlbz6BPYtg6LDZOAT2BxtMhf/lWktKRtsA9j4/lUEWAT2HsN7io5wD7oORCggzQXLYxfzA0oNFz6PJBB9ONd7soqUihmEoAGdJebuuCjof0l/bQoFPOaU1p5EkczOw2ln6yR4SsI9vfwwPB1mXYKWG+gpPGOSnNXKt66gSK8oXq/ayhfMwPy2h6mrGhDHS89hQYt6xx56rKVvow2am2rBMQ4H6nfR5z2YqZBF40cB+oi2B8FUwzyBnU2p3p54DiPoPypWAwEbXcntZblnlbYNESzJytcpWdgdtvTbs0dPls/tksOzc3ZgLr/KebOR7pOrawIDAQAB"
+}
